@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "movie_type")
+@Table(name = "movie_type1")
 public class MovieType {
 
     @Id
