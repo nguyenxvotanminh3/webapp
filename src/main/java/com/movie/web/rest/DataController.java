@@ -27,7 +27,7 @@ public class DataController {
 
 
     @PostMapping("/add_rating/{theId}")
-    public Optional<Data> addRating(@PathVariable int theId , @RequestBody Set<Rating> ratings){
+    public Optional<Data> addRating(@PathVariable String theId , @RequestBody Set<Rating> ratings){
         Optional<Data> data1 = dataService.findById(theId);
         Set<Rating> newRatings = new HashSet<>();
         for(Rating rating : ratings) {

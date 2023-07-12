@@ -24,7 +24,7 @@ public class DataService implements DataDao {
     }
 
     @Override
-    public Optional<Data> findById(int theId) {
+    public Optional<Data> findById(String theId) {
         return dataRepo.findById(theId);
     }
 

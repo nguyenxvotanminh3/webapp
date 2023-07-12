@@ -29,7 +29,7 @@ public class MovieTypeController {
 
 
     @GetMapping("/movie/{theId}")
-    public Optional<MovieType> getMovieById(@PathVariable int theId){
+    public Optional<MovieType> getMovieById(@PathVariable String theId){
         return movieService.findById(theId);
     }
 
@@ -45,8 +45,8 @@ public class MovieTypeController {
             return movieType1;
     }
 
-    @DeleteMapping("/delete_movie")
-    public String deleteMovie(@PathVariable int theId){
+    @DeleteMapping("/delete_movie/{theId}")
+    public String deleteMovie(@PathVariable String theId){
             Optional<MovieType> movieType2 = movieService.findById(theId);
             if(movieType2.isPresent()){
             movieService.deleteById(theId);

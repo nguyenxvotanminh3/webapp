@@ -9,12 +9,11 @@ import java.util.Set;
 
 
 @Entity
-@Table(name = "movie_data")
+@Table(name = "movie_data1")
 public class Data {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "data_id")
-    public int dataId;
+    public String dataId;
 
 
 
@@ -40,54 +39,54 @@ public class Data {
     public String description;
 
     @Column(name = "feature_img")
-    public String feature_img;
+    public String featureImg;
 
     @Column(name = "feature_vid")
-    public String feature_vid;
+    public String featureVid;
     @Column(name = "country")
     public String country;
 
     @Column(name = "type")
     public String type;
 
-    @Column(name = "gerne")
-    public String gerne;
+    @Column(name = "genre")
+    public String[] genre;
 
-    @Column(name = "realease",nullable = false)
-    public String realease;
-    @Column(name = "director",nullable = false)
+    @Column(name = "release")
+    public String release;
+    @Column(name = "director")
     public String director ;
-    @Column(name = "casts",nullable = false)
+    @Column(name = "casts")
     public String casts;
-    @Column(name = "production",nullable = false )
+    @Column(name = "production" )
     public String production;
 
     public Data(){}
 
-    public Data(String img, String timeDemain, String trailerVid, String name, String description, String feature_img, String feature_vid, String country, String type, String gerne, String realease, String director, String casts, String production) {
+    public Data(String img, String timeDemain, String trailerVid, String name, String description, String featureImg, String featureVid, String country, String type, String[] genre, String release, String director, String casts, String production) {
         this.img = img;
 
         this.timeDemain = timeDemain;
         this.trailerVid = trailerVid;
         this.name = name;
         this.description = description;
-        this.feature_img = feature_img;
-        this.feature_vid = feature_vid;
+        this.featureImg = featureImg;
+        this.featureVid = featureVid;
         this.country = country;
         this.type = type;
-        this.gerne = gerne;
-        this.realease = realease;
+        this.genre = genre;
+        this.release = release;
         this.director = director;
         this.casts = casts;
         this.production = production;
     }
 
 
-    public int getDataId() {
+    public String getDataId() {
         return dataId;
     }
 
-    public void setDataId(int dataId) {
+    public void setDataId(String dataId) {
         this.dataId = dataId;
     }
 
@@ -115,14 +114,6 @@ public class Data {
         this.trailerVid = trailerVid;
     }
 
-//    public MovieType getMovieType() {
-//        return movieType;
-//    }
-//
-//    public void setMovieType(MovieType movieType) {
-//        this.movieType = movieType;
-//    }
-
 
 
     public String getName() {
@@ -141,20 +132,20 @@ public class Data {
         this.description = description;
     }
 
-    public String getFeature_img() {
-        return feature_img;
+    public String getFeatureImg() {
+        return featureImg;
     }
 
-    public void setFeature_img(String feature_img) {
-        this.feature_img = feature_img;
+    public void setFeatureImg(String featureImg) {
+        this.featureImg = featureImg;
     }
 
-    public String getFeature_vid() {
-        return feature_vid;
+    public String getFeatureVid() {
+        return featureVid;
     }
 
-    public void setFeature_vid(String feature_vid) {
-        this.feature_vid = feature_vid;
+    public void setFeatureVid(String feature_vid) {
+        this.featureVid = featureVid;
     }
 
     public String getCountry() {
@@ -173,20 +164,20 @@ public class Data {
         this.type = type;
     }
 
-    public String getGerne() {
-        return gerne;
+    public String[] getGenre() {
+        return genre;
     }
 
-    public void setGerne(String gerne) {
-        this.gerne = gerne;
+    public void setGenre(String[] genre) {
+        this.genre = genre;
     }
 
-    public String getRealease() {
-        return realease;
+    public String getRelease() {
+        return release;
     }
 
-    public void setRealease(String realease) {
-        this.realease = realease;
+    public void setRelease(String release) {
+        this.release = release;
     }
 
     public String getDirector() {
@@ -226,19 +217,18 @@ public class Data {
     public String toString() {
         return "Data{" +
                 "dataId=" + dataId +
-//                ", movieType=" + movieType +
                 ", rating=" + rating +
                 ", img='" + img + '\'' +
                 ", timeDemain='" + timeDemain + '\'' +
                 ", trailerVid='" + trailerVid + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", feature_img='" + feature_img + '\'' +
-                ", feature_vid='" + feature_vid + '\'' +
+                ", feature_img='" + featureImg + '\'' +
+                ", feature_vid='" + featureVid + '\'' +
                 ", country='" + country + '\'' +
                 ", type='" + type + '\'' +
-                ", gerne='" + gerne + '\'' +
-                ", realease='" + realease + '\'' +
+                ", genre='" + genre + '\'' +
+                ", realease='" + release + '\'' +
                 ", director='" + director + '\'' +
                 ", casts='" + casts + '\'' +
                 ", production='" + production + '\'' +

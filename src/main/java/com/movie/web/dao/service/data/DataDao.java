@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface DataDao {
     List<Data> findAll();
-    Optional<Data> findById(int theId);
+    Optional<Data> findById(String theId);
 
     Optional<Data> save(Data data);
 }

@@ -39,7 +39,7 @@ public class MovieService implements MovieDao {
     }
 
     @Override
-    public Optional<MovieType> findById(int theId) {
+    public Optional<MovieType> findById(String theId) {
         return movieRepository.findById(theId);
     }
 
@@ -58,7 +58,7 @@ public class MovieService implements MovieDao {
     }
 
     @Override
-    public void deleteById(int theId) {
+    public void deleteById(String theId) {
         movieRepository.deleteById(theId);
 
     }

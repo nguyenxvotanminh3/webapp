@@ -10,11 +10,11 @@ public interface MovieDao {
 
 
     List<MovieType> findAll();
-    Optional<MovieType> findById(int theId);
+    Optional<MovieType> findById(String theId);
 
     MovieType save(MovieType movieType);
 
     MovieType updateMovie(MovieType movieType);
 
-    void deleteById(int theId);
+    void deleteById(String theId);
 }

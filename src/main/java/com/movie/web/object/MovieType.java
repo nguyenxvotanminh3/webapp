@@ -7,13 +7,12 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "movie_type")
+@Table(name = "movie_type1")
 public class MovieType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "movie_id" )
-    public int movieId ;
+    public String movieId ;
     @Column(name = "created_at")
     public String createdAt;
 
@@ -39,11 +38,11 @@ public class MovieType {
 
     }
 
-    public int getMovieId() {
+    public String getMovieId() {
         return movieId;
     }
 
-    public void setMovieId(int movieId) {
+    public void setMovieId(String movieId) {
         this.movieId = movieId;
     }
 
