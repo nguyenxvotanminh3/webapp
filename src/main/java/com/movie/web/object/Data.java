@@ -144,7 +144,7 @@ public class Data {
         return featureVid;
     }
 
-    public void setFeatureVid(String feature_vid) {
+    public void setFeatureVid(String featureVid) {
         this.featureVid = featureVid;
     }
 
