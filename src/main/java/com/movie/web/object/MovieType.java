@@ -18,6 +18,7 @@ public class MovieType {
 
 
 
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "data_id_key")
     public Data data;
@@ -32,11 +33,13 @@ public class MovieType {
 
     public MovieType(){}
 
-    public MovieType(String createdAt, String updatedAt) {
+    public MovieType(String movieId,String createdAt, String updatedAt) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-
+        this.movieId = movieId;
     }
+
+
 
     public String getMovieId() {
         return movieId;

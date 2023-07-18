@@ -3,6 +3,7 @@ package com.movie.web.object;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+
 @Entity
 @Table(name = "movie_rating1")
 public class Rating {
@@ -13,9 +14,10 @@ public class Rating {
 
 
     @JsonIgnore
-    @ManyToOne(cascade = {CascadeType.DETACH , CascadeType.MERGE , CascadeType.PERSIST , CascadeType.REFRESH})
-    @JoinColumn(name = "rating_id_key" )
+    @OneToOne(cascade =CascadeType.ALL)
+    @JoinColumn(name = "data_key" )
      public Data data;
+
 
 
     @Column(name = "user_name")
@@ -28,10 +30,20 @@ public class Rating {
 
     public Rating(){}
 
-    public Rating(String userName, String createdAt, String starAmount) {
+    public Rating(String ratingId, String userName, String createdAt, String starAmount) {
         this.userName = userName;
         this.createdAt = createdAt;
         this.starAmount = starAmount;
+        this.ratingId = ratingId;
+    }
+
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getRatingId() {
@@ -47,7 +59,7 @@ public class Rating {
     }
 
     public void setData(Data data) {
-        this.data = data;
+       this.data = data;
     }
 
     public String getUserName() {

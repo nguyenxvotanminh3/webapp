@@ -3,8 +3,7 @@ package com.movie.web.object;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
-import java.util.Collection;
-import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 
@@ -21,6 +20,13 @@ public class Data {
     @OneToOne(mappedBy = "data",cascade = CascadeType.ALL)
     public MovieType movieType;
 
+    @OneToMany(mappedBy = "data",cascade = {CascadeType.DETACH , CascadeType.MERGE , CascadeType.PERSIST , CascadeType.REFRESH})
+    public Set<VideoSeries> videoSeries;
+
+
+    @OneToMany(mappedBy = "data",cascade = CascadeType.ALL)
+    public Set<VideoMovie> videoMovie;
+
 
     @OneToMany(mappedBy = "data",cascade = CascadeType.ALL)
     public Set<Rating> rating;
@@ -30,7 +36,7 @@ public class Data {
     @Column(name = "time_demain")
     public String timeDemain;
     @Column(name = "trailer_vid")
-    public String trailerVid;
+    public String[] trailerVid;
 
     @Column(name = "name")
     public String name;
@@ -63,9 +69,9 @@ public class Data {
 
     public Data(){}
 
-    public Data(String img, String timeDemain, String trailerVid, String name, String description, String featureImg, String featureVid, String country, String type, String[] genre, String release, String director, String casts, String production) {
+    public Data(String dataId,String img, String timeDemain, String[] trailerVid, String name, String description, String featureImg, String featureVid, String country, String type, String[] genre, String release, String director, String casts, String production) {
         this.img = img;
-
+        this.dataId = dataId;
         this.timeDemain = timeDemain;
         this.trailerVid = trailerVid;
         this.name = name;
@@ -81,6 +87,29 @@ public class Data {
         this.production = production;
     }
 
+    public MovieType getMovieType() {
+        return movieType;
+    }
+
+    public void setMovieType(MovieType movieType) {
+        this.movieType = movieType;
+    }
+
+    public Set<VideoSeries> getVideoSeries() {
+        return videoSeries;
+    }
+
+    public void setVideoSeries(Set<VideoSeries> videoSeries) {
+        this.videoSeries = videoSeries;
+    }
+
+    public Set<VideoMovie> getVideoMovie() {
+        return videoMovie;
+    }
+
+    public void setVideoMovie(Set<VideoMovie> videoMovie) {
+        this.videoMovie = videoMovie;
+    }
 
     public String getDataId() {
         return dataId;
@@ -106,11 +135,11 @@ public class Data {
         this.timeDemain = timeDemain;
     }
 
-    public String getTrailerVid() {
+    public String[] getTrailerVid() {
         return trailerVid;
     }
 
-    public void setTrailerVid(String trailerVid) {
+    public void setTrailerVid(String[] trailerVid) {
         this.trailerVid = trailerVid;
     }
 
@@ -144,7 +173,7 @@ public class Data {
         return featureVid;
     }
 
-    public void setFeatureVid(String feature_vid) {
+    public void setFeatureVid(String featureVid) {
         this.featureVid = featureVid;
     }
 
