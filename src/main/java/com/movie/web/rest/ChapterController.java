@@ -1,8 +1,8 @@
 package com.movie.web.rest;
 
-import com.movie.web.dao.service.series.SeriesService;
-import com.movie.web.object.Chapter;
-import com.movie.web.object.VideoSeries;
+import com.movie.web.service.series.SeriesService;
+import com.movie.web.entity.Chapter;
+import com.movie.web.entity.VideoSeries;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;

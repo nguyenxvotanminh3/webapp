@@ -1,10 +1,10 @@
 package com.movie.web.rest;
 
 
-//import com.movie.web.dao.service.MovieService;
-import com.movie.web.dao.service.MovieService;
+//import com.movie.web.dao.service.movietype.MovieService;
+import com.movie.web.service.movietype.MovieService;
 //import com.movie.web.object.MovieType;
-import com.movie.web.object.MovieType;
+import com.movie.web.entity.MovieType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
