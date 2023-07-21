@@ -1,11 +1,12 @@
 package com.movie.web.service.movietype;
 
 import com.movie.web.dto.MovieTypeDtoMapper;
-import com.movie.web.service.data.DataService;
-import com.movie.web.service.rating.RatingService;
+import com.movie.web.repo.movietype.MovieRepository;
+import com.movie.web.service.data.DataServiceImpl;
+
 import com.movie.web.dto.MovieTypeDTO;
-//import com.movie.web.object.MovieType;
-import com.movie.web.models.MovieType;
+
+import com.movie.web.model.MovieType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Repository;
@@ -17,20 +18,17 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Service
-@Repository
-public class MovieService implements MovieDao {
+public class MovieServiceImpl implements MovieService {
 
 @Autowired
     public MovieRepository movieRepository;
-    public RatingService ratingService;
-
     public MovieTypeDtoMapper movieTypeDtoMapper;
-    public DataService dataService ;
+    public DataServiceImpl dataServiceImpl;
 
-    public MovieService(MovieRepository movieRepository, MovieTypeDtoMapper movieTypeDtoMapper , RatingService ratingService , DataService dataService){
-        this.ratingService = ratingService;
+    public MovieServiceImpl(MovieRepository movieRepository, MovieTypeDtoMapper movieTypeDtoMapper , DataServiceImpl dataServiceImpl){
+
         this.movieRepository = movieRepository ;
-        this.dataService = dataService;
+        this.dataServiceImpl = dataServiceImpl;
         this.movieTypeDtoMapper = movieTypeDtoMapper;
     }
 

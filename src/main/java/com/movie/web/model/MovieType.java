@@ -1,4 +1,4 @@
-package com.movie.web.models;
+package com.movie.web.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;

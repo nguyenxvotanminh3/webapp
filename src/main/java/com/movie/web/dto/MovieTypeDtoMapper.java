@@ -1,6 +1,6 @@
 package com.movie.web.dto;
 
-import com.movie.web.models.MovieType;
+import com.movie.web.model.MovieType;
 import org.springframework.stereotype.Service;
 
 import java.util.function.Function;

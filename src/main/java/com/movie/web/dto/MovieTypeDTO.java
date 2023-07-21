@@ -1,6 +1,6 @@
 package com.movie.web.dto;
 
-import com.movie.web.models.*;
+import com.movie.web.model.*;
 
 public record MovieTypeDTO (
         String movieId,
