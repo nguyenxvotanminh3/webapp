@@ -6,11 +6,6 @@ public record MovieTypeDTO (
         String movieId,
         String createdAt,
         Data data,
-        String updatedAt
-
-
-
-) {
-
-
-}
+        String updatedAt) {
+        
+        }
