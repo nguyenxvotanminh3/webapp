@@ -1,6 +1,6 @@
 package com.movie.web.service.series;
 
-import com.movie.web.entity.VideoSeries;
+import com.movie.web.models.VideoSeries;
 
 import java.util.Optional;
 

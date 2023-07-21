@@ -1,6 +1,6 @@
 package com.movie.web.service.data;
 
-import com.movie.web.entity.Data;
+import com.movie.web.models.Data;
 
 import java.util.List;
 import java.util.Optional;

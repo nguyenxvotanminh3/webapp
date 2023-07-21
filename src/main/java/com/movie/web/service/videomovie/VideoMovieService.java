@@ -1,6 +1,6 @@
 package com.movie.web.service.videomovie;
 
-import com.movie.web.entity.VideoMovie;
+import com.movie.web.models.VideoMovie;
 
 public class VideoMovieService implements VideoMovieDao {
     VideoMovieRepo videoMovieRepo;

@@ -1,14 +1,19 @@
-package com.movie.web.entity;
+package com.movie.web.models;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "video_series1")
-public class VideoSeries {
+public class VideoSeries implements Serializable  {
 
     @Id
     @Column(name = "series_id")
@@ -36,30 +41,6 @@ public class VideoSeries {
 
     public VideoSeries(String seriesId,String season) {
         this.seriesId = seriesId;
-        this.season = season;
-    }
-
-    public String getSeriesId() {
-        return seriesId;
-    }
-
-    public void setSeriesId(String seriesId) {
-        this.seriesId = seriesId;
-    }
-
-    public Set<Chapter> getChapters() {
-        return chapters;
-    }
-
-    public void setChapters(Set<Chapter> chapters) {
-        this.chapters = chapters;
-    }
-
-    public String getSeason() {
-        return season;
-    }
-
-    public void setSeason(String season) {
         this.season = season;
     }
 

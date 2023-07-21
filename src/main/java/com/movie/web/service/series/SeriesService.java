@@ -1,6 +1,6 @@
 package com.movie.web.service.series;
 
-import com.movie.web.entity.VideoSeries;
+import com.movie.web.models.VideoSeries;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

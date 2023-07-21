@@ -1,6 +1,6 @@
 package com.movie.web.service.rating;
 
-import com.movie.web.entity.Rating;
+import com.movie.web.models.Rating;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

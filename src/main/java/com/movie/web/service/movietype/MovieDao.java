@@ -1,16 +1,17 @@
 package com.movie.web.service.movietype;
 
-import com.movie.web.entity.MovieType;
+import com.movie.web.dto.MovieTypeDTO;
+import com.movie.web.models.MovieType;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.stream.Stream;
 
 public interface MovieDao {
 
 
 
-    List<MovieType> findAll();
-    Optional<MovieType> findById(String theId);
+    List<MovieTypeDTO> findAll();
+    Stream<MovieTypeDTO> findById(String theId);
 
     MovieType save(MovieType movieType);
 

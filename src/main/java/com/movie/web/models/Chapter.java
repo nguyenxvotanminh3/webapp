@@ -1,11 +1,17 @@
-package com.movie.web.entity;
+package com.movie.web.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "chapter1")
-public class Chapter {
+public class Chapter implements Serializable {
     @Id
     @Column(name = "chapter_id")
     private String chapterId;
@@ -16,7 +22,7 @@ public class Chapter {
     @JsonIgnore
     @ManyToOne(cascade = {CascadeType.DETACH , CascadeType.MERGE , CascadeType.PERSIST , CascadeType.REFRESH})
     @JoinColumn(name = "video_key" )
-    public VideoSeries videoSeries;
+    private VideoSeries videoSeries;
     @Column(name = "url")
    private String url;
     @Column(name = "name")
@@ -34,62 +40,6 @@ public class Chapter {
         this.name = name;
         this.img = img;
         this.description = description;
-    }
-
-    public String getChapterId() {
-        return chapterId;
-    }
-
-    public void setChapterId(String chapterId) {
-        this.chapterId = chapterId;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public VideoSeries getVideoSeries() {
-        return videoSeries;
-    }
-
-    public void setVideoSeries(VideoSeries videoSeries) {
-        this.videoSeries = videoSeries;
     }
 
     @Override

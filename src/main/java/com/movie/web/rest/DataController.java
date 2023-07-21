@@ -1,10 +1,10 @@
 package com.movie.web.rest;
 
 import com.movie.web.service.data.DataService;
-import com.movie.web.entity.Data;
-import com.movie.web.entity.Rating;
-import com.movie.web.entity.VideoMovie;
-import com.movie.web.entity.VideoSeries;
+import com.movie.web.models.Data;
+import com.movie.web.models.Rating;
+import com.movie.web.models.VideoMovie;
+import com.movie.web.models.VideoSeries;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashSet;

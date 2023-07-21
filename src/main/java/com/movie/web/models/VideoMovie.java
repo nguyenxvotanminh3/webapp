@@ -1,11 +1,17 @@
-package com.movie.web.entity;
+package com.movie.web.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "video_movie1")
-public class VideoMovie {
+public class VideoMovie implements Serializable {
 
     @Id
     @Column(name = "video_id")
@@ -14,7 +20,7 @@ public class VideoMovie {
     @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "data_key")
-    public Data data;
+    private Data data;
     @Column(name = "season")
     private String season;
     @Column(name = "url")
@@ -34,62 +40,6 @@ public class VideoMovie {
         this.url = url;
         this.name = name;
         this.img = img;
-        this.description = description;
-    }
-
-    public Data getData() {
-        return data;
-    }
-
-    public void setData(Data data) {
-        this.data = data;
-    }
-
-    public String getVideoId() {
-        return videoId;
-    }
-
-    public void setVideoId(String videoId) {
-        this.videoId = videoId;
-    }
-
-    public String getSeason() {
-        return season;
-    }
-
-    public void setSeason(String season) {
-        this.season = season;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
         this.description = description;
     }
 

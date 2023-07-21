@@ -1,10 +1,16 @@
-package com.movie.web.entity;
+package com.movie.web.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.io.Serializable;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "movie_type1")
-public class MovieType {
+public class MovieType implements Serializable  {
 
     @Id
     @Column(name = "movie_id" )
@@ -35,38 +41,6 @@ public class MovieType {
         this.movieId = movieId;
     }
 
-
-
-    public String getMovieId() {
-        return movieId;
-    }
-
-    public void setMovieId(String movieId) {
-        this.movieId = movieId;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-    public Data getData() {
-        return data;
-    }
-
-    public void setData(Data data) {
-        this.data = data;
-    }
 
     @Override
     public String toString() {
