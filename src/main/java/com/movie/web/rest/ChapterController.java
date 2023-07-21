@@ -21,14 +21,11 @@ public class ChapterController {
         public VideoSeries addChapter(@PathVariable String theId, @RequestBody Set<Chapter> chapter){
             Optional<VideoSeries> videoSeries = seriesService.findById(theId) ;
             Set<Chapter> chapters = new HashSet<>();
-
             for (Chapter chapter1 : chapter){
                 chapter1.setVideoSeries(videoSeries.get());
                 chapters.add(chapter1);
             }
-
             videoSeries.get().setChapters(chapters);
-
             return seriesService.save(videoSeries.get());
         }
 

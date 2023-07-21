@@ -21,18 +21,18 @@ public class Data  implements Serializable  {
 
 
     @JsonIgnore
-    @OneToOne(mappedBy = "data",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "data",cascade = CascadeType.ALL, orphanRemoval = true)
     public MovieType movieType;
 
-    @OneToMany(mappedBy = "data",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "data",cascade = CascadeType.ALL, orphanRemoval = true)
     public Set<VideoSeries> videoSeries;
 
 
-    @OneToMany(mappedBy = "data",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "data",cascade = CascadeType.ALL, orphanRemoval = true)
     public Set<VideoMovie> videoMovie;
 
 
-    @OneToMany(mappedBy = "data",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "data",cascade = CascadeType.ALL, orphanRemoval = true)
     public Set<Rating> rating;
 
     @Column(name = "img")

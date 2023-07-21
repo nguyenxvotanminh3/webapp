@@ -20,7 +20,7 @@ public class Rating implements Serializable {
 
 
     @JsonIgnore
-    @OneToOne(cascade =CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "data_key" )
     private Data data;
 
